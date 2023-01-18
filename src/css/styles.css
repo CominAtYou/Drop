@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        font-family: "Segoe UI Variable Display", system-ui !important
+        ;
+    }
+
+    button {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .no-animation-when-disabled:hover:disabled {
+        transform: none;
+        box-shadow: none;
+        cursor: default;
+    }
+
+    #popup-modal {
+        animation: FadeIn .2s linear;
+    }
+
+    @keyframes FadeIn {
+        0% { opacity: 0% };
+        100% { opacity: 100% }
+    }
+
+    @media (min-width: 1024px) {
+        #submit-button:hover {
+            background: linear-gradient(270deg, #018c00, #53f150, #018c00, #018c00);
+            background-size: 200% 100%;
+
+            animation: Green_Shine 5s linear infinite;
+            animation-direction: reverse;
+        }
+
+        #submit-button:hover span {
+            color: white;
+        }
+
+        @keyframes Green_Shine {
+            0% { background-position: 0%; }
+            25% { background-position: 50%; }
+            50% { background-position: 100%; }
+            75% { background-position: 150%; }
+            100% { background-position: 200%; }
+        }
+    }
+}
