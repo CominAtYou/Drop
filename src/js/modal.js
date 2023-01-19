@@ -9,5 +9,5 @@ $("#modal-close").on("click", () => {
 });
 
 $("#logout-button").on("click", () => {
-    window.location.href = `https://auth.cominatyou.com/logout?returnto=uploader`;
+    window.location.href = `https://127.0.0.1/auth/logout`;
 });
