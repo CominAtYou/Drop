@@ -16,7 +16,7 @@ $("#submit-button").on("click", async () => {
         }
     }
 
-    if (locationValue === null) {
+    if (locationValue === null || locationValue === "default") {
         showSnackbar("A location must be selected.");
         return;
     }
