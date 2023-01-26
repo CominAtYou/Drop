@@ -31,7 +31,13 @@ $("#submit-button").on("click", async () => {
         filename: string,
         file: binary data, or URL: string
     */
-    const res = await fetch("http://127.0.0.1/upload", { method: 'POST', body: new FormData($("form")[0]) });
+    const form = new FormData($("form")[0]);
+
+    if (urlValue) {
+        form.delete("file");
+    }
+
+    const res = await fetch("http://127.0.0.1/upload", { method: 'POST', body: form });
 
     if (res.status < 200 || res.status >= 300) {
         try {
