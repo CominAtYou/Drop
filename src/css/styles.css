@@ -19,12 +19,13 @@
     }
 
     #popup-modal {
-        animation: FadeIn .2s linear;
+        animation: ExpandIn .75s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    @keyframes FadeIn {
-        0% { opacity: 0% };
-        100% { opacity: 100% }
+    @keyframes ExpandIn {
+        0% { scale: 70%; opacity: 50% };
+        75% { scale: 90%; opacity: 75% };
+        100% { scale: 100%; opacity: 100% };
     }
 
     @media (min-width: 1024px) {
