@@ -9,7 +9,7 @@ $("#file-input").on("change", event => {
 
     $('#upload-button-text').text(event.target.files[0].name);
     $('#file-name-input').val(event.target.files[0].name);
-    $("#file-url-input").attr("disabled", true);
+    $("#file-url-input").attr("disabled", event.target.files.length > 0 ? true : null);
 });
 
 $('#file-url-input').on("change", event => {
